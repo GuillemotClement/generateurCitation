@@ -1,8 +1,8 @@
 //TABLEAU DES CITATION
-let mesCitations = [
-    ["On ne se baigne jamais deux fois dans le même fleuve", "Héraclite"],
-    ["Je sais que je ne sais rien", "Socrate"],
-    ["L’homme est un animal politique ", "Aristote"],
+let tabCitations = [
+    ["Espece de gros con de ta mere, tu pues comme un minable qui pue, je rève de te découper en morceaux jusqu'à l'aube après le match de foot. Va te faire voir chez les grecs", "Signé : Ton ami qui t'attends"],
+    ["Espece de vieux batard  puant(e) , tu ressembles à  une merde siliconnée  qui transpire du cul , je ris en pensant à  te fumer  derrière le cyprès  après l'apéro . Va te faire sucer ", "Socrate"],
+    ["Espece de vieux batard  de tes os , tu es  un nabot  jaune devant marron derrière , je mouille en pensant à  te mettre mes couilles sur ton nez devant ta petasse  en regardant un match de rugby . Va te faire pourrir ", "Aristote"],
     [" La mort n’est rien pour nous", "Epicure"],
     ["Je pense, donc je suis", "René Descartes"],
     ["L’homme est né libre, et partout il est dans les fers", "Jean-Jacques Rousseau"],
@@ -11,3 +11,32 @@ let mesCitations = [
     ["L’existence précède l’essence", "Jean-Paul Sartre"],
     ["On ne naît pas femme : on le devient", "Simone de Beauvoir"]
 ];
+
+let citation    = document.querySelector("#citation");
+let auteur      = document.querySelector("#auteur");
+let btn         = document.querySelector("#btn");
+
+//variable contiendras le nb max d'element dans le tableau. A automatiser
+let nbElementTab = 10;
+//Variable contient l'index de la question actuellement affichée (par défaut, la citation affichée est la première du tableau, sa valeur est donc égale à 0)
+let dernier;
+//Variable contient le nb aleatoire 
+let nbAleatoire = genererNombreEntier(nbElementTab);
+
+//On recupere le clic de l'user sur le bouton Generer citation
+btn.addEventListener('click', nouvelleCitation);
+
+//la fonction vient chercher une nouvelle citation grace au nb aleatoire generer
+function nouvelleCitation(){
+    nbAleatoire         = genererNombreEntier(tabCitations[tabCitations.length-1]);
+    let recupCitation   = tabCitations[nbAleatoire][0];
+    let recupAuteur     = tabCitations[nbAleatoire][1];
+}
+
+
+//Ou max est le nombre max d'element du tableau
+//Celle ci est a implementer
+function genererNombreEntier(max) {
+  return Math.floor(Math.random() * Math.floor(max));
+}
+
