@@ -17,18 +17,26 @@ let auteur      = document.querySelector("#auteur");
 let btn         = document.querySelector("#btn");
 
 //variable contiendras le nb max d'element dans le tableau. A automatiser
-let nbElementTab = 10;
+let indexTabMax = (tabCitations.length)-1;
 //Variable contient l'index de la question actuellement affichée (par défaut, la citation affichée est la première du tableau, sa valeur est donc égale à 0)
 let dernier;
+
+
+function genererNombreEntier(max) {
+  let nb =Math.floor(Math.random() * Math.floor(max));
+  return nb
+}
 //Variable contient le nb aleatoire 
-let nbAleatoire = genererNombreEntier(nbElementTab);
+let nbAleatoire = genererNombreEntier(indexTabMax);
+console.log(nbAleatoire);
+
 
 //On recupere le clic de l'user sur le bouton Generer citation
-btn.addEventListener('click', nouvelleCitation);
+btn.addEventListener('click', ()=>alert(nbElementTab));
 
 //la fonction vient chercher une nouvelle citation grace au nb aleatoire generer
 function nouvelleCitation(){
-    nbAleatoire         = genererNombreEntier(tabCitations[tabCitations.length-1]);
+    nbAleatoire         = genererNombreEntier(nbElementTab);
     let recupCitation   = tabCitations[nbAleatoire][0];
     let recupAuteur     = tabCitations[nbAleatoire][1];
 }
@@ -36,7 +44,3 @@ function nouvelleCitation(){
 
 //Ou max est le nombre max d'element du tableau
 //Celle ci est a implementer
-function genererNombreEntier(max) {
-  return Math.floor(Math.random() * Math.floor(max));
-}
-
