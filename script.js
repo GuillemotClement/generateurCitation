@@ -11,3 +11,31 @@ let mesCitations = [
     ["L’existence précède l’essence", "Jean-Paul Sartre"],
     ["On ne naît pas femme : on le devient", "Simone de Beauvoir"]
 ];
+
+//Declaration des variables
+//Par defaut, premiere citation qui est stocker
+let dernier = mesCitations[0][0];
+//Stocke un nombre aleatoire generer par la fonction math.random
+let nbAleatoire = Math.floor(Math.random() * (10 - 1 + 1)) + 1;
+
+//Recuperation des elements
+let affichageCitation   = document.querySelector('#citation');
+let affichageAuteur     = document.querySelector('#auteur');
+let btnCitation    = document.querySelector('#btnNew');
+
+// //Detection clic sur bouton
+btnCitation.addEventListener('clic', nouvelleCitation);
+
+
+
+function nouvelleCitation(){
+    document.affichageCitation.innerHTML = mesCitations[0][0];
+    document.querySelector("#auteur").innerHTML = mesCitations[0][1];
+}
+//     affichageCitation.innerHTML = '<p>dernier</p>';
+//     document.body.append(affichageCitation);
+// }
+
+console.log(dernier);
+
+

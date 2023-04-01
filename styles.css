@@ -12,11 +12,13 @@ body{
 
 #citation{
     border: 1px red solid;
-
+    height: 150px;
+    width: auto;
 }
 
 #auteur{
     border: 1px red solid;
-
+    height: 150px;
+    width: auto;
 }
 
