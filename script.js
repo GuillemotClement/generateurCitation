@@ -12,6 +12,10 @@ let tabCitations = [
   ["L’existence précède l’essence", "Jean-Paul Sartre"],
   ["On ne naît pas femme : on le devient", "Simone de Beauvoir"]
 ];
+//DECLARATION DES VARIABLES
+//La variable récupère la derniere citation générer
+let lastCitation = 0;
+let nbAleatoire = 0;
 
 //RECUPERATION DES ELEMENT DE LA PAGE WEB
 let citation    = document.querySelector("#citation");
@@ -25,28 +29,39 @@ function genererNombreEntier(max) {
 }
 
 //Fonction affiche une nouvelle citation au clic sur le bouton
+// function generationCitation(){
+//   for(let i = 1; i <= 10000; i++){
+//     if(lastCitation == nbAleatoire){
+//       nbAleatoire = genererNombreEntier(tabCitations.length-1);
+//     } else{
+//       btn.addEventListener('click', generationCitation);
+//     };
+//     citation.innerHTML  = tabCitations[nbAleatoire][0];
+//     auteur.innerHTML    = tabCitations[nbAleatoire][1];
+//   }  
+// }
 function generationCitation(){
-    citation.innerHTML  = tabCitations[nbAleatoire][0];
-    auteur.innerHTML    = tabCitations[nbAleatoire][1];
-  }
+  do{
+    nbAleatoire = genererNombreEntier(tabCitations.length-1);
+  } while(nbAleatoire === lastCitation);
+  //lastCitation = nbAleatoire
+  citation.innerHTML  = tabCitations[nbAleatoire][0];
+  auteur.innerHTML    = tabCitations[nbAleatoire][1];
+}
 
 //On affiche la premier citation par défaut.
-citation.innerHTML  = tabCitations[0][0];
-auteur.innerHTML    = tabCitations[0][1];
-
-
-//Génération du nombre aléatoire
-//Ici dernier recupère le nbAleatoire, on empeche l'affiche deux fois d'affiler la meme variable
-let nbAleatoire = genererNombreEntier(tabCitations.length-1);
-console.log(nbAleatoire);
-let dernier = nbAleatoire;
+citation.innerHTML  = tabCitations[lastCitation][0];
+auteur.innerHTML    = tabCitations[lastCitation][1];
 
 //Ajout l'évènement clic user
-// btn.addEventListener('click', generationCitation);
+btn.addEventListener('click', generationCitation);
 
-
-
-
+//Si la valeur du nombre aléatoire est égale à la derniere valeur, on relance une génération aléatoire
+// if(lastCitation == nbAleatoire){
+//   nbAleatoire = genererNombreEntier(tabCitations.length-1);
+// } else{
+//   btn.addEventListener('click', generationCitation);
+// };
 
 
 
