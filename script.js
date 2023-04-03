@@ -29,17 +29,6 @@ function genererNombreEntier(max) {
 }
 
 //Fonction affiche une nouvelle citation au clic sur le bouton
-// function generationCitation(){
-//   for(let i = 1; i <= 10000; i++){
-//     if(lastCitation == nbAleatoire){
-//       nbAleatoire = genererNombreEntier(tabCitations.length-1);
-//     } else{
-//       btn.addEventListener('click', generationCitation);
-//     };
-//     citation.innerHTML  = tabCitations[nbAleatoire][0];
-//     auteur.innerHTML    = tabCitations[nbAleatoire][1];
-//   }  
-// }
 function generationCitation(){
   do{
     nbAleatoire = genererNombreEntier(tabCitations.length-1);
@@ -55,43 +44,3 @@ auteur.innerHTML    = tabCitations[lastCitation][1];
 
 //Ajout l'évènement clic user
 btn.addEventListener('click', generationCitation);
-
-//Si la valeur du nombre aléatoire est égale à la derniere valeur, on relance une génération aléatoire
-// if(lastCitation == nbAleatoire){
-//   nbAleatoire = genererNombreEntier(tabCitations.length-1);
-// } else{
-//   btn.addEventListener('click', generationCitation);
-// };
-
-
-
-// //variable contiendras le nb max d'element dans le tableau. A automatiser
-// let indexTabMax = (tabCitations.length)-1;
-// //Variable contient l'index de la question actuellement affichée (par défaut, la citation affichée est la première du tableau, sa valeur est donc égale à 0)
-// let dernier;
-
-
-
-
-// function genererNombreEntier(max) {
-// let nb =Math.floor(Math.random() * Math.floor(max));
-// return nb
-// }
-// //Variable contient le nb aleatoire 
-// let nbAleatoire = genererNombreEntier(indexTabMax);
-// console.log(nbAleatoire);
-
-
-// //On recupere le clic de l'user sur le bouton Generer citation
-// btn.addEventListener('click', ()=>alert(nbAleatoire));
-
-// //la fonction vient chercher une nouvelle citation grace au nb aleatoire generer
-// function nouvelleCitation(){
-//   nbAleatoire         = genererNombreEntier(nbElementTab);
-//   let recupCitation   = tabCitations[nbAleatoire][0];
-//   let recupAuteur     = tabCitations[nbAleatoire][1];
-// }
-
-
-//Ou max est le nombre max d'element du tableau
-//Celle ci est a implementer
